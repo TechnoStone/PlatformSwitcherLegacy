@@ -61,8 +61,7 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
             this.lblTextGameVer.Name = "lblTextGameVer";
             this.lblTextGameVer.Size = new System.Drawing.Size(123, 65);
             this.lblTextGameVer.TabIndex = 4;
-            this.lblTextGameVer.Text = "Game version:\r\nRGL files version:\r\nSteam files version:\r\nEpic games files version" +
-    ":\r\nCurrent platform:";
+            this.lblTextGameVer.Text = "Game version:\r\nRGL files version:\r\nSteam files version:\r\nEpic games files version" + ":\r\nCurrent platform:";
             this.lblTextGameVer.Click += new System.EventHandler(this.LblTextGameVer_Click);
             // 
             // lblGameVer
@@ -91,7 +90,7 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
             this.btnFixPlayOnSteam.Name = "btnFixPlayOnSteam";
             this.btnFixPlayOnSteam.Size = new System.Drawing.Size(171, 23);
             this.btnFixPlayOnSteam.TabIndex = 5;
-            this.btnFixPlayOnSteam.Text = "Fix \"Play on Steam\" error";
+            this.btnFixPlayOnSteam.Text = "Remove \"on Steam\" from RGL\r\n";
             this.btnFixPlayOnSteam.UseVisualStyleBackColor = true;
             this.btnFixPlayOnSteam.Click += new System.EventHandler(this.btnFixPlayOnSteam_Click);
             // 
@@ -101,7 +100,7 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
             this.btnSteamInstalled.Name = "btnSteamInstalled";
             this.btnSteamInstalled.Size = new System.Drawing.Size(171, 23);
             this.btnSteamInstalled.TabIndex = 7;
-            this.btnSteamInstalled.Text = "Mark game as installed on Steam";
+            this.btnSteamInstalled.Text = "Add \"on Steam\" to RGL";
             this.btnSteamInstalled.UseVisualStyleBackColor = true;
             this.btnSteamInstalled.Click += new System.EventHandler(this.btnSteamInstalled_Click);
             // 
@@ -153,10 +152,7 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.checkForUpdatesToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.checkForUpdatesToolStripMenuItem, this.toolStripMenuItem2, this.exitToolStripMenuItem });
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
@@ -165,27 +161,25 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
             // 
             this.checkForUpdatesToolStripMenuItem.Enabled = false;
             this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.checkForUpdatesToolStripMenuItem.Text = "&Check for updates... (WIP)";
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
+            this.checkForUpdatesToolStripMenuItem.Text = "&Total rework project has started, stay tuned...";
             this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.CheckForUpdatesToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(208, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(305, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem,
-            this.troubleshootingToolStripMenuItem});
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.aboutToolStripMenuItem, this.troubleshootingToolStripMenuItem });
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
@@ -206,9 +200,7 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem, this.helpToolStripMenuItem });
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(408, 24);
@@ -221,7 +213,7 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
             this.btnFixPlayOnEpic.Name = "btnFixPlayOnEpic";
             this.btnFixPlayOnEpic.Size = new System.Drawing.Size(171, 23);
             this.btnFixPlayOnEpic.TabIndex = 6;
-            this.btnFixPlayOnEpic.Text = "Fix \"Play on Epic\" error";
+            this.btnFixPlayOnEpic.Text = "Remove \"on Epic\" from RGL";
             this.btnFixPlayOnEpic.UseVisualStyleBackColor = true;
             this.btnFixPlayOnEpic.Click += new System.EventHandler(this.btnFixPlayOnEpic_Click);
             // 
@@ -231,7 +223,7 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
             this.btnInstallEpic.Name = "btnInstallEpic";
             this.btnInstallEpic.Size = new System.Drawing.Size(171, 23);
             this.btnInstallEpic.TabIndex = 8;
-            this.btnInstallEpic.Text = "Mark game as installed on Epic";
+            this.btnInstallEpic.Text = "Add \"on Epic\" to RGL";
             this.btnInstallEpic.UseVisualStyleBackColor = true;
             this.btnInstallEpic.Click += new System.EventHandler(this.btnInstallEpic_Click);
             // 
@@ -275,7 +267,6 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

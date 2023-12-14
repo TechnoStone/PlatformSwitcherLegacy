@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Grand Theft Auto V Platform Switcher")]
-[assembly: AssemblyCopyright("Copyright © TechnoStone 2020")]
+[assembly: AssemblyCopyright("TechnoStone 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,6 +33,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.0.7.0")]
-[assembly: AssemblyFileVersion("0.0.7.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]
 [assembly: NeutralResourcesLanguage("en")]

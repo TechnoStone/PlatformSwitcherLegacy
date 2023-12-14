@@ -28,8 +28,8 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
         string _tmbFixEpic =
             "Relaunch Rockstar Games Launcher\nThen install game to steamapps\\common folder if you're planning to switch to Steam\nOr to folder above current if you want to switch to RGL only";
 
-        string _tmbSteamApi64NotFound =
-            "There are no any steam_api64.dll files detected in the folder. Please consider verifying your game files via Steam";
+        // string _tmbSteamApi64NotFound =
+        //     "There are no any steam_api64.dll files detected in the folder. Please consider verifying your game files via Steam";
 
         string _tmbConfigCorrupted =
             "Unable to read the config. It's probably corrupted or inaccesible, or you have not installed Switcher properly.\nIf you have ran the Switcher directly from archive - unpack archive to game folder (place everything from it next to GTA5.exe), open Switcher from folder, click About - How to use";
@@ -282,13 +282,13 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
                         File.Delete(_steamApi64Orig);
                     }
                 }
-                else if (_cp == "Steam")
-                {
-                    if (File.Exists(_steamApi64Orig) == false && File.Exists(_steamApi64Back) == false)
-                    {
-                        MessageBox.Show(_tmbSteamApi64NotFound, _oops, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
+                // else if (_cp == "Steam")
+                // {
+                //     if (File.Exists(_steamApi64Orig) == false && File.Exists(_steamApi64Back) == false)
+                //     {
+                //         MessageBox.Show(_tmbSteamApi64NotFound, _oops, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //     }
+                // }
             }
             catch (Exception ex)
             {
@@ -320,6 +320,8 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
 
             if (isElevated == false)
             {
+                btnSteamInstalled.Enabled = false;
+                btnFixPlayOnSteam.Enabled = false;
                 btnFixPlayOnEpic.Enabled = false;
                 btnInstallEpic.Enabled = false;
                 lblRunAsAdmin.Visible = true;
@@ -404,6 +406,8 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
         private void btnFixPlayOnSteam_Click(object sender, EventArgs e)
         {
             Process.Start("reg", @" add HKCU\SOFTWARE\Valve\Steam\Apps\271590 /v Installed /t REG_DWORD /d 0 /f");
+            Process.Start("reg",
+                " delete \"" + @"HKLM\SOFTWARE\WOW6432Node\Rockstar Games\GTAV" + "\" /v InstallFolderSteam /f");
             MessageBox.Show(_tmbFixSteam, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             _pp = _cp;
             _cp = "RGL";
@@ -413,6 +417,9 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
         private void btnSteamInstalled_Click(object sender, EventArgs e)
         {
             Process.Start("reg", @" add HKCU\SOFTWARE\Valve\Steam\Apps\271590 /v Installed /t REG_DWORD /d 1 /f");
+            Process.Start("reg",
+                "add \"" + @"HKLM\SOFTWARE\WOW6432Node\Rockstar Games\GTAV" +
+                "\" /v InstallFolderSteam /t REG_SZ /d \"" + @Environment.CurrentDirectory + "\\GTAV\"" + @" /f");
         }
 
         private void btnEpic_Click(object sender, EventArgs e)
@@ -425,14 +432,14 @@ namespace Grand_Theft_Auto_V_Platform_Switcher
         private void btnFixPlayOnEpic_Click(object sender, EventArgs e)
         {
             Process.Start("reg",
-                " delete \"" + @"HKLM\SOFTWARE\Rockstar Games\Grand Theft Auto V" + "\" /v InstallFolderEpic /f");
+                " delete \"" + @"HKLM\SOFTWARE\WOW6432Node\Rockstar Games\Grand Theft Auto V" + "\" /v InstallFolderEpic /f");
             MessageBox.Show(_tmbFixEpic, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnInstallEpic_Click(object sender, EventArgs e)
         {
             Process.Start("reg",
-                "add \"" + @"HKLM\SOFTWARE\Rockstar Games\Grand Theft Auto V" +
+                "add \"" + @"HKLM\SOFTWARE\WOW6432Node\Rockstar Games\Grand Theft Auto V" +
                 "\" /v InstallFolderEpic /t REG_SZ /d \"" + @Environment.CurrentDirectory + "\" /f");
         }
     }
